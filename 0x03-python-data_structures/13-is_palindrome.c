@@ -6,7 +6,7 @@
  * Return: 0 if it is not a palindrome
  * 1 if it is a palindrome
  */
-int is_palindrome(listint_t **head);
+int is_palindrome(listint_t **head)
 {
 	if (head == NULL || *head == NULL)
 		return (1);

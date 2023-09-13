@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-def to_subtract(list_num):
+def roman_to_int(roman_string):
     if not isinstance(roman_string, str):
         return 0
     total = 0

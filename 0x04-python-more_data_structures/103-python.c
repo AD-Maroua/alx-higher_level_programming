@@ -4,15 +4,13 @@ void print_python_list(PyObject *p);
 void print_python_bytes(PyObject *p);
 
 /**
- * print_python_bytes - Prints bytes information
- *
- * @p: A Python list Object
- * Return: no return
+ * print_python_list - Prints basics info about Python lists.
+ * @p: A Python list Object.
  */
 void print_python_bytes(PyObject *p)
 {
 	int size, alloc, i;
-	char *string;
+	const char *type;
 	PyListObject *list = (PyListObject *)p;
 	PyVarObject *var = (PyVarObject *)p;
 
@@ -27,7 +25,7 @@ void print_python_bytes(PyObject *p)
 	{
 		type = list->ob_item[i]->ob_type->tp_name;
 		printf("Element %d: %s\n", i, type);
-		if (strcmp(type, "bytes") ==0)
+		if (strcmp(type, "bytes") == 0)
 			print_python_bytes(list->ob_item[i]);
 	}
 }
